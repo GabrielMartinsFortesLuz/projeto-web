@@ -1,0 +1,59 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: #5e5b5bab;
+    color: #000000;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    background-color: #333333;
+}
+
+header .logoIcon,
+header .loginIcon{
+    width: 30px;
+    transition: 0.2s ease-in-out;
+}
+
+header .logoIcon:hover,
+header .loginIcon:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+main .divMain{
+    display: flex;
+    justify-content: center;
+    margin-left: 40vw;
+    margin-top: 25vh;
+    width: 350px;
+    height: 400px;
+    background-color: #FFFFFF;
+}
+
+main .buttonList{
+    list-style: none;
+    margin-top: 25%;
+    padding: 0;
+}
+
+main .buttonList li{
+    margin-bottom: 75px;
+}
+
+main .button{
+    display: flex;
+    width: 250px;
+    height: 100px;
+    padding-top: 15%;
+    justify-content: center;
+    background-color: #5e5b5bab;
+    cursor: pointer;
+}
