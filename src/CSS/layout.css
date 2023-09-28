@@ -9,7 +9,7 @@ body {
     color: #000000;
 }
 
-header {
+header nav{
     display: flex;
     justify-content: space-between;
     padding: 25px;
@@ -28,32 +28,45 @@ header .loginIcon:hover{
     cursor: pointer;
 }
 
-main .divMain{
-    display: flex;
-    justify-content: center;
-    margin-left: 40vw;
-    margin-top: 25vh;
+main .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+main .popup {
+    display: none;
+    position: fixed;
+    margin-left: 50%;
     width: 350px;
-    height: 400px;
-    background-color: #FFFFFF;
-}
-
-main .buttonList{
-    list-style: none;
-    margin-top: 25%;
-    padding: 0;
-}
-
-main .buttonList li{
-    margin-bottom: 75px;
+    height: 500px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    z-index: 2;
 }
 
 main .button{
     display: flex;
+    justify-content: center;
+    margin-left: 42vw;
+    margin-top: 35vh;
     width: 250px;
     height: 100px;
-    padding-top: 15%;
-    justify-content: center;
-    background-color: #5e5b5bab;
+    background-color: #FFFFFF;
     cursor: pointer;
+}
+
+main div .button{
+    margin-left: 10%;
+    margin-top: 20%;
+}
+
+main .button span{
+    margin-top: 40px;
 }
