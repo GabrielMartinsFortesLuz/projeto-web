@@ -12,6 +12,9 @@ showPopupButton.addEventListener("click", function() {
 closePopupButton.addEventListener("click", function() {
     overlay.style.display = "none";
     popup.style.display = "none";
+
+    const lobbyNameInput = document.getElementById("lobbyName");
+    lobbyNameInput.value = "";
 });
 
 confirmButton.addEventListener("click", function() {

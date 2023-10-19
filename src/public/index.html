@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto web - main</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/src/CSS/layout.css">
+    <link rel="stylesheet" href="/src/CSS/reset.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/src/public/index.html">
+                <img src="/src/images/png-placeholder.jpg" alt="placeholderLogo" class="logoIcon">
+            </a>
+            <a href="/src/public/login.html">
+                <img src="/src/images/png-placeholder-login.png" alt="placeholderLogin" class="loginIcon">
+            </a>
+        </nav>
+    </header>
+    <main>
+        <button id="showPopup" class="button">
+            <span>Criar sala</span>
+        </button>
+        <div id="overlay" class="overlay"></div>
+        <div id="popup" class="popup">
+            <label for="lobbyName">Nome da sala:</label>
+            <input type="text" id="lobbyName" name="lobbyName">
+            <button id="confirmButton" class="button">
+                <span>Confirmar</span>
+            </button>
+            <button id="closePopup" class="button">
+                <span>Fechar</span>
+            </button>
+        </div>
+    </main>
+
+    <script src="/src/js/index.js"></script>
+    <script type="text/javascript">
+        var socket = io('http://localhost:3000')
+    </script>
+</body>
+</html>
