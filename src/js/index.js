@@ -27,3 +27,23 @@ confirmButton.addEventListener("click", function() {
         alert("Por favor, insira um nome de sala válido.");
     }
 });
+
+document.getElementById("uploadButton").addEventListener("click", function() {
+    document.getElementById("imageInput").click();
+});
+
+document.getElementById("imageInput").addEventListener("change", function() {
+    const uploadedImage = document.getElementById("uploadedImage");
+    const file = this.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            uploadedImage.src = e.target.result;
+            uploadedImage.style.display = "block";
+        };
+
+        reader.readAsDataURL(file);
+    }
+});
