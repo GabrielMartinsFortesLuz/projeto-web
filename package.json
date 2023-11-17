@@ -7,7 +7,7 @@
     "socket.io": "^4.7.2"
   },
   "scripts": {
-    "start": "node src/js/server.js",
-    "build": "npm build"
+    "start": "node src/public/index.html",
+    "build": "node src/js/server.js"
   }
 }
