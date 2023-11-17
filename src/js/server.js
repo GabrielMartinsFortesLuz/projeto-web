@@ -4,8 +4,8 @@ const path = require('path');
 const cors = require('cors');
 
 const app = express();
-const server = require('http').createServer(app);
-const io = require('socket.io')(server, {
+const http = require('http').createServer(app);
+const io = require('socket.io')(http, {
   cors: {
     origin: "*",
     methods: ["GET", "POST"]
@@ -27,4 +27,4 @@ io.on('connection', socket => {
   console.log(`socket conectado: ${socket.id}`);
 })
 
-server.listen(3000);
+http.listen(5501);
