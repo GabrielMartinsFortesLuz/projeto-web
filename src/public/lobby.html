@@ -18,6 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
     <script defer src="../js/index.js"></script>
     <script defer src="../js/toolbar.js"></script>
+    <script defer src="../js/sheet.js"></script>
 
 </head>
 
@@ -32,6 +33,44 @@
             </a>
         </nav>
     </header>
+
+    <main>
+        <button class="characterSheetButton" onclick="sheetButton()">
+            <span class="arrowLeft"></span>
+        </button>
+
+        <div class="sidebar">
+            <label for="lobbyName">Nome do personagem:</label>
+            <input type="text" id="characterName" name="characterName">
+        </div>
+
+        <div class="toolbar">
+            <button class="buttonToolbar" onclick="createDraggableObject(this)">
+                <span>Criar objeto 1</span>
+            </button>
+            <button class="buttonToolbar" onclick="createDraggableObject(this)">
+                <span>Criar objeto 2</span>
+            </button>
+            <button class="buttonToolbar" onclick="createDraggableObject(this)">
+                <span>Criar objeto 3</span>
+            </button>
+            <button class="buttonToolbar" onclick="createDraggableObject(this)">
+                <span>Criar objeto 4</span>
+            </button>
+            <button class="buttonToolbar" onclick="createDraggableObject(this)">
+                <span>Criar objeto 5</span>
+            </button>
+            <button class="buttonToolbar" onclick="createDraggableObject(this)">
+                <span>Criar objeto 6</span>
+            </button>
+            <button class="buttonToolbar" onclick="createDraggableObject(this)">
+                <span>Criar objeto 7</span>
+            </button>
+            <button class="buttonToolbar" onclick="createDraggableObject(this)">
+                <span>Criar objeto 8</span>
+            </button>
+        </div>
+    </main>
 
     <script type="text/javascript">
         var socket = io('http://localhost:5501')
