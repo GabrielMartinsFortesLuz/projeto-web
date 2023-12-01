@@ -1,37 +1,32 @@
 
-    // toolbar.js
+function createDraggableObject(button) {
+    const object = document.createElement('div');
+    object.classList.add('draggable');
+    object.setAttribute('draggable', true);
 
-// Função para criar objetos arrastáveis
-function criarObjetoArrastavel(botao) {
-    const objeto = document.createElement('div');
-    objeto.classList.add('draggable');
-    objeto.setAttribute('draggable', true);
+    object.style.left = `${button.offsetLeft}px`;
+    object.style.top = `${button.offsetTop}px`;
 
-    objeto.style.left = `${botao.offsetLeft}px`;
-    objeto.style.top = `${botao.offsetTop}px`;
+    document.body.appendChild(object);
 
-    document.body.appendChild(objeto);
-
-    // Adiciona eventos de arraste ao objeto criado
-    tornarArrastavel(objeto);
+    makeDraggable(object);
 }
 
-// Função para tornar um elemento arrastável
-function tornarArrastavel(elemento) {
+function makeDraggable(element) {
     let isDragging = false;
 
-    elemento.addEventListener('mousedown', (e) => {
+    element.addEventListener('mousedown', (e) => {
         isDragging = true;
 
-        const offsetX = e.clientX - elemento.getBoundingClientRect().left;
-        const offsetY = e.clientY - elemento.getBoundingClientRect().top;
+        const offsetX = e.clientX - element.getBoundingClientRect().left;
+        const offsetY = e.clientY - element.getBoundingClientRect().top;
 
         document.addEventListener('mousemove', moveElement);
 
         function moveElement(e) {
             if (isDragging) {
-                elemento.style.left = `${e.clientX - offsetX}px`;
-                elemento.style.top = `${e.clientY - offsetY}px`;
+                element.style.left = `${e.clientX - offsetX}px`;
+                element.style.top = `${e.clientY - offsetY}px`;
             }
         }
 
@@ -41,17 +36,16 @@ function tornarArrastavel(elemento) {
         });
     });
 
-    elemento.addEventListener('dragstart', () => {
-        elemento.classList.add('dragging');
+    element.addEventListener('dragstart', () => {
+        element.classList.add('dragging');
     });
 
-    elemento.addEventListener('dragend', () => {
-        elemento.classList.remove('dragging');
+    element.addEventListener('dragend', () => {
+        element.classList.remove('dragging');
     });
 }
 
-// Adiciona eventos de arraste aos elementos
 document.addEventListener('DOMContentLoaded', function () {
-    const objetosArrastaveis = document.querySelectorAll('.draggable');
-    objetosArrastaveis.forEach(tornarArrastavel);
+    const object = document.querySelectorAll('.draggable');
+    object.forEach(makeDraggable);
 });
