@@ -40,9 +40,24 @@
         </button>
 
         <div class="sidebar">
-            <label for="lobbyName">Nome do personagem:</label>
+            <label for="characterName">Nome do personagem:</label>
             <input type="text" id="characterName" name="characterName">
         </div>
+
+        <input name="mapImage" type="file" accept="image/jpeg, image/png">
+
+        <h1>Dado Virtual D6 | Virtual Dice</h1>
+    <section class='conteudo'>
+        <p id='diceRoll' class='center'>?</p>
+        <figure>
+            <img
+                src="images/dado/0.png"
+                alt="Dado"
+                id='imgDice'
+            />
+        </figure>
+    </section>
+    <p class='center'><button id='btnRoll'>Sortear</button></p>
 
         <div class="toolbar">
             <button class="buttonToolbar" onclick="createDraggableObject(this)">
@@ -70,6 +85,7 @@
                 <span>Criar objeto 8</span>
             </button>
         </div>
+
     </main>
 
     <script type="text/javascript">
