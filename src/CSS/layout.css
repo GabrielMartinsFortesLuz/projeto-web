@@ -1,23 +1,34 @@
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family:  sans-serif;
     height: 100vh;
     width: 100vw;
-    background-color: #333333;
-    color: #000000;
-    margin: 0;
+    overflow: hidden;
+    background-color: #333333; 
+    background-size: cover; /* Faz com que a imagem cubra todo o corpo */
+    color: #ffffff;
 }
 
-header nav{
+body.page-index{
+    background-image: url("/src/images/op.jpg");
+    background-size: cover;
+    color: #ffffff;
+}
+
+header nav {
     display: flex;
     justify-content: space-between;
     padding: 25px;
-    background-color: #333333;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: rgba(10, 10, 10, 0.);
 }
 
 header .logoIcon,
 header .loginIcon{
-    width: 30px;
+    width: 20px;
     transition: 0.2s ease-in-out;
+    margin-top: -40px;
 }
 
 header .logoIcon:hover,
@@ -26,11 +37,23 @@ header .loginIcon:hover{
     cursor: pointer;
 }
 
-main {
+.page-index main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 70px;
+    margin-top: -27vh; 
+    position: relative;
+}
+
+.page-lobby main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 70px;
+    margin-top: -60px;
 }
 
 main .overlay {
@@ -49,27 +72,81 @@ main .popup {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 350px;
-    height: 400px;
+    width: 300px; /* Reduzi o tamanho para um layout mais compacto */
     transform: translate(-50%, -50%);
-    border-radius: 15px;
-    background-color: #333333;
-    color: #ffffff;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #333333;
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 2;
+    margin-top: 10px;
 }
 
-main .button{
-    width: 250px;
-    height: 100px;
-    border-radius: 15px;
-    border-width: 3px;
-    border-style: solid;
-    background-color: #ffffff;
-    border-color: #ffffff;
-    color: #000000;
+main .popup label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+main .popup input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+main .popup .button {
+    width: 100%;
+    padding: 5px;
+    border-radius: 8px;
+    border: 2px solid #565a40;
+    background-color: #565a40;
+    color: #ffffff;
     cursor: pointer;
+    font-size: 0.7em;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+main .popup .button:hover {
+    background-color: #ffffff;
+    color: #565a40;
+    border: 2px solid #565a40;
+}
+
+main .popup #confirmButton {
+    width: 60%; 
+    margin-right: -30%; 
+    margin-left: 20%;
+    margin-top: 10%;
+}
+
+main .popup #closePopup {
+    width: 60%; 
+    margin-left: 20%; 
+    margin-right: 4%;
+    margin-top: 0%;
+}
+
+main .button {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #ffffff;
+    background-color: #565a40; 
+    color: #ffffff; /* Cor do texto do botão */
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.s ease, border 0.3s ease; /* Adicionado 'border' à transição */
     
+}
+
+main .button:hover {
+    background-color: #6482b4;
+    color: #ffffff;
+    border: 2px solid #ffffff; /* Cor da borda no hover */
 }
 
 main div .button{
@@ -83,21 +160,39 @@ main .button span{
     margin-top: 0;
 }
 
-.content {
+.initial-text {
     max-width: 600px; 
     margin: 20px 0;
-    margin-top: 5%;
+    margin-top: 11%;
     font-size: 1.2em;
-    line-height: 2;
+    line-height: 1.4;
     white-space: pre-line;
     color: #ffffff;
+}
+
+#mapImageInput {
+    display: none;
+}
+
+#uploadLabel{
+    margin-bottom: 10px;
+}
+
+.image-upload-div{
+    width: 1000px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #006400;
 }
 
 .toolbar {
     display: flex;
     margin-top: 10px;
-    width: 690px;
-    height: 100px;
+    padding-bottom: 10px;
+    padding-right: 10px;
     border-radius: 20px;
     background-color: #ffffff;
 }
@@ -150,10 +245,10 @@ main .button span{
 .sidebar {
     position: fixed;
     top: 0;
-    right: -450px;
-    width: 450px;
+    right: -600px;
+    width: 600px;
     height: 100%;
-    background-color: #eee6e6;
+    background-color: #737373;
     padding: 20px;
     z-index: 1;
     transition: right 0.3s ease-in-out;
@@ -183,17 +278,24 @@ main .button span{
     padding: 5px;
     border: 0;
     border-radius: 5px;
-    background: #673ab7;
+    background: #565a40;
     color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#btnRoll:active {
+    background-color: #ffffff;
+    box-shadow: 1px 1px 5px #565a40;
+    color: #565a40;
 }
 
 #btnRoll:hover {
-    box-shadow: 1px 1px 5px blueviolet;
+    box-shadow: 1px 1px 5px #565a40;
 }
 
 #sorteado {
-    background: #311b92;
+    background: #565a40;
     color: #fff;
     padding: 5px 10px;
     border-radius: 50%;
@@ -231,4 +333,22 @@ main .button span{
 
 .aparecer {
     animation: aparecer 1.5s ease-in;
+}
+
+.diceTitle {
+    text-align: center;
+    margin-top: 10px; 
+    font-size: 150%;
+}
+
+.diceResult {
+    display: inline-block;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: #6482b4; /* Cor de fundo do contorno redondo */
+    color: #fff; /* Cor do texto dentro do contorno redondo */
+}
+
+#diceRoll {
+    font-size: 180%; /* Ajuste o valor conforme necessário */
 }
