@@ -49,3 +49,27 @@ document.addEventListener('DOMContentLoaded', function () {
     const object = document.querySelectorAll('.draggable');
     object.forEach(makeDraggable);
 });
+
+function toolbarConfigPopup() {
+    const overlay = document.querySelector('.overlay');
+    const popup = document.querySelector('.toolbarConfigPopup');
+
+    overlay.style.display = 'block';
+    popup.style.display = 'block';
+}
+
+function dicePopup() {
+    const overlay = document.querySelector('.overlay');
+    const popup = document.querySelector('.dicePopup');
+
+    overlay.style.display = 'block';
+    popup.style.display = 'block';
+}
+
+function closePopupWindow(popupClass) {
+    const overlay = document.querySelector('.overlay');
+    const popup = document.querySelector(`.${popupClass}`);
+
+    overlay.style.display = 'none';
+    popup.style.display = 'none';
+}

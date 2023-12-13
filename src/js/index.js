@@ -35,3 +35,19 @@
             }
         });
     }
+    function rollDice() {
+        // Lógica para gerar um número aleatório entre 1 e 6 (como em um dado comum de seis lados)
+        const result = Math.floor(Math.random() * 6) + 1;
+    
+        // Atualizar o conteúdo do elemento com o ID 'diceRoll' com o resultado
+        const diceRollElement = document.getElementById("diceRoll");
+        if (diceRollElement) {
+            diceRollElement.textContent = result;
+        }
+    }
+    
+    // Adicionar um ouvinte de evento ao botão de rolar dados
+    const rollButton = document.getElementById("btnRoll");
+    if (rollButton) {
+        rollButton.addEventListener("click", rollDice);
+    }
