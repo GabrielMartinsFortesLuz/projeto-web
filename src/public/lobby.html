@@ -43,17 +43,29 @@
         <div class="sidebar">
             <label for="characterName">Nome do personagem:</label>
             <input type="text" id="characterName" name="characterName">
+        
+            <label for="characterClass">Classe e Nível:</label>
+            <input type="text" id="characterClass" name="characterClass">
+        
+            <label for="characterBackground">Antecedente:</label>
+            <input type="text" id="characterBackground" name="characterBackground">
+        
+            <label for="playerName">Nome do jogador:</label>
+            <input type="text" id="playerName" name="playerName">
+        
+            <label for="characterRace">Raça:</label>
+            <input type="text" id="characterRace" name="characterRace">
+        
+            <label for="characterAlignment">Alinhamento:</label>
+            <input type="text" id="characterAlignment" name="characterAlignment">
+        
+            <label for="experiencePoints">Pontos de Experiência:</label>
+            <input type="text" id="experiencePoints" name="experiencePoints">
         </div>
 
         <label for="mapImageInput" class="button" id="uploadLabel">Escolher Imagem</label>
         <input name="mapImage" type="file" accept="image/jpeg, image/png" id="mapImageInput">
         <div class="image-upload-div"></div>
-
-        <h1 class="diceTitle">Jogue os dados</h1>
-        <section class='diceOptions'>
-            <p id='diceRoll' class='center diceResult'>?</p>
-        </section>
-        <p class='center'><button id='btnRoll' onclick="rollDice()">Sortear</button></p>
 
         <div class="toolbar">
             <button class="buttonToolbar" onclick="createDraggableObject(this)">
@@ -85,10 +97,10 @@
             </button>
 
             <button class="buttonToolbar" onclick="toolbarConfigPopup()">
-                <span>Opção 1</span>
+                <span>Configuração</span>
             </button>
             <button class="buttonToolbar" onclick="dicePopup()">
-                <span>Opção 2</span>
+                <span>Jogar Dados</span>
             </button>
         </div>
 
@@ -101,13 +113,17 @@
 
     <div class="popup dicePopup">
         <span id="closeDicePopup" class="button" onclick="closePopupWindow('dicePopup')">X</span>
-        <!-- Conteúdo do Popup 2 -->
+        <h1 class="diceTitle">Jogue os dados</h1>
+        <section class='diceOptions'>
+            <p id='diceRoll' class='center diceResult'>?</p>
+         </section>
+        <p class='center'><button id='btnRoll' onclick="rollDice()">Sortear</button></p>
     </div>
 
     </main>
 
     <script type="text/javascript">
-        var socket = io('http://localhost:5501')
+        var socket = io('');
     </script>
 
 </body>

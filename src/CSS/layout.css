@@ -180,7 +180,7 @@ main .button span{
 
 .image-upload-div{
     width: 1000px;
-    height: 450px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -252,16 +252,80 @@ main .button span{
     padding: 20px;
     z-index: 1;
     transition: right 0.3s ease-in-out;
+    color: #ecf0f1;
+}
+
+.sidebar label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.sidebar input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #565a40; /* Cor da borda do campo de entrada */
+    border-radius: 4px;
+    background-color: #737373; /* Cor de fundo do campo de entrada */
+    color: #ecf0f1; /* Cor do texto do campo de entrada */
+}
+
+.sidebar input:focus {
+    outline: none;
+    border-color: #565a40; /* Cor da borda quando em foco */
+}
+
+.sidebar .button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #ffffff;
+    background-color: #565a40; /* Cor de fundo do botão */
+    color: #ffffff; /* Cor do texto do botão */
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.sidebar .button:hover {
+    background-color: #ffffff;
+    color: #565a40;
+    border: 2px solid #565a40;
+}
+
+.sidebar textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #565a40; /* Cor da borda do campo de texto */
+    border-radius: 4px;
+    background-color: #737373; /* Cor de fundo do campo de texto */
+    color: #ecf0f1; /* Cor do texto do campo de texto */
+}
+
+.sidebar textarea:focus {
+    outline: none;
+    border-color: #565a40; /* Cor da borda quando em foco */
+}
+
+.sidebar select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #565a40; /* Cor da borda do campo de seleção */
+    border-radius: 4px;
+    background-color: #737373; /* Cor de fundo do campo de seleção */
+    color: #ecf0f1; /* Cor do texto do campo de seleção */
+}
+
+.sidebar select:focus {
+    outline: none;
+    border-color: #a5b354; /* Cor da borda quando em foco */
 }
 
 .sidebar.opened {
     right: 0;
-}
-
-.sidebar textarea {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 10px;
 }
 
 /*Estilização da função de dado*/
@@ -341,14 +405,23 @@ main .button span{
     font-size: 150%;
 }
 
-.diceResult {
-    display: inline-block;
-    padding: 20px;
-    border-radius: 50%;
-    background-color: #6482b4; /* Cor de fundo do contorno redondo */
-    color: #fff; /* Cor do texto dentro do contorno redondo */
+/* Adicione isso ao seu arquivo layout.css */
+.dicePopup button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid #565a40;
+    background-color: #ffffff;
+    color: #565a40;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
-#diceRoll {
-    font-size: 180%; /* Ajuste o valor conforme necessário */
+.dicePopup button:hover {
+    background-color: #565a40;
+    color: #ffffff;
+    border: 2px solid #565a40;
 }
