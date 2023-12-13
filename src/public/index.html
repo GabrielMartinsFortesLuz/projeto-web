@@ -5,38 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto web - main</title>
+    <title>Grimório</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/src/CSS/layout.css">
     <link rel="stylesheet" href="/src/CSS/reset.css">
 
     <script defer src="../js/index.js"></script>
+
+    <style>
+        .yatra-font {
+            font-family: 'Yatra One', sans-serif;
+        }
+    </style>
 </head>
 
-<body>
+<body class="page-index">
     <header>
         <nav>
             <a href="../public/index.html">
-                <img src="../images/png-placeholder.jpg" alt="placeholderLogo" class="logoIcon">
-            </a>
-            <a href="../public/login.html">
-                <img src="../images/png-placeholder-login.png" alt="placeholderLogin" class="loginIcon">
+                <img src="../images/logo2.png" alt="placeholderLogo" class="logoIcon" style="width: 180px;" >
             </a>
         </nav>
     </header>
     
     <main>
-        <div class="content">
-            <p>
-                Seja bem-vindo ao site " ".
-                Um espaço virtual que você pode usar para compartilhar seus mapas de RPG com seus amigos em tempo real.
-                Preencha e gerencie suas fichas, interaja com os elementos do cenário, tenha mais controle sobre o combate em turnos.
-                Crie uma sala e convide mais pessoas!
-            </p>
+        <div class="initial-text">
+            <h1 class="yatra-font">Seja bem-vindo ao Grimório!</h1>
+            <p>Um espaço virtual que você pode usar para compartilhar seus mapas de RPG com seus amigos em tempo real.
+            Preencha e gerencie suas fichas, interaja com os elementos do cenário, tenha mais controle sobre o combate em turnos.
+            Crie uma sala e convide mais pessoas!</p>
         </div>
         <button id="showPopup" class="button">
             <span>Criar sala</span>
@@ -53,6 +55,6 @@
             </button>
         </div>
     </main>
-
 </body>
+
 </html>

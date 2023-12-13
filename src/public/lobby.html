@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto web - Lobby</title>
+    <title>Inicio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,17 +19,18 @@
     <script defer src="../js/index.js"></script>
     <script defer src="../js/toolbar.js"></script>
     <script defer src="../js/sheet.js"></script>
+    <script defer src="../js/map.js"></script>
 
 </head>
 
-<body>
+<body class="page-lobby">
     <header>
         <nav>
             <a href="../public/index.html">
-                <img src="../images/png-placeholder.jpg" alt="placeholderLogo" class="logoIcon">
+                <img src="../images/logo2.png" alt="logo2" class="logoIcon" style="width: 180px;">
             </a>
             <a href="../public/login.html">
-                <img src="../images/png-placeholder-login.png" alt="placeholderLogin" class="loginIcon">
+                <img src="../images/icon.png" alt="icon" class="loginIcon" style="width: 40px;">
             </a>
         </nav>
     </header>
@@ -44,20 +45,15 @@
             <input type="text" id="characterName" name="characterName">
         </div>
 
-        <input name="mapImage" type="file" accept="image/jpeg, image/png">
+        <label for="mapImageInput" class="button" id="uploadLabel">Escolher Imagem</label>
+        <input name="mapImage" type="file" accept="image/jpeg, image/png" id="mapImageInput">
+        <div class="image-upload-div"></div>
 
-        <h1>Dado Virtual D6 | Virtual Dice</h1>
-    <section class='conteudo'>
-        <p id='diceRoll' class='center'>?</p>
-        <figure>
-            <img
-                src="images/dado/0.png"
-                alt="Dado"
-                id='imgDice'
-            />
-        </figure>
-    </section>
-    <p class='center'><button id='btnRoll'>Sortear</button></p>
+        <h1 class="diceTitle">Jogue os dados</h1>
+        <section class='diceOptions'>
+            <p id='diceRoll' class='center diceResult'>?</p>
+        </section>
+        <p class='center'><button id='btnRoll' onclick="rollDice()">Sortear</button></p>
 
         <div class="toolbar">
             <button class="buttonToolbar" onclick="createDraggableObject(this)">
@@ -84,12 +80,36 @@
             <button class="buttonToolbar" onclick="createDraggableObject(this)">
                 <span>Criar objeto 8</span>
             </button>
+            <button class="buttonToolbar" onclick="createDraggableObject(this)">
+                <span>Criar objeto 9</span>
+            </button>
+
+            <button class="buttonToolbar" onclick="toolbarConfigPopup()">
+                <span>Opção 1</span>
+            </button>
+            <button class="buttonToolbar" onclick="dicePopup()">
+                <span>Opção 2</span>
+            </button>
         </div>
+
+        <div class="overlay"></div>
+
+    <div class="popup toolbarConfigPopup">
+        <span id="closeToolbarConfigPopup" class="button" onclick="closePopupWindow('toolbarConfigPopup')">X</span>
+        <!-- Conteúdo do Popup 1 -->
+    </div>
+
+    <div class="popup dicePopup">
+        <span id="closeDicePopup" class="button" onclick="closePopupWindow('dicePopup')">X</span>
+        <!-- Conteúdo do Popup 2 -->
+    </div>
 
     </main>
 
     <script type="text/javascript">
         var socket = io('http://localhost:5501')
     </script>
+
 </body>
+
 </html>
